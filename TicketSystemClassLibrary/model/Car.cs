@@ -18,7 +18,7 @@
         /// <param name="licenseplate">Nummerplade ID</param>
         public Car(string licenseplate) : base(licenseplate)
         {
-            Date = new();
+            //Date = new();
         }
 
         /// <summary>
