@@ -15,11 +15,18 @@ namespace TicketSystemClassLibrary.model
         /// </summary>
         protected DateTime Date { get; private set; }
 
-
+        /// <summary>
+        /// Default konstuktør for Vehicle
+        /// </summary>
         protected Vehicle()
         {
         }
 
+        /// <summary>
+        /// Konstruktør for Vehicle
+        /// </summary>
+        /// <param name="licenseplate">Nummerplade ID</param>
+        /// <exception cref="ArgumentException">Nummerplade ID skal være mellem 1-7 tegn</exception>
         protected Vehicle(string licenseplate)
         {
             if (licenseplate == null || licenseplate.Length == 0 || licenseplate.Length > 7 )
