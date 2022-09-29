@@ -3,50 +3,40 @@
     /// <summary>
     /// Klasse for Car
     /// </summary>
-    public class Car
+    public class Car : Vehicle
     {
-        public Car():this("Not assigned")
+        /// <summary>
+        /// Default Konstruktør for Car
+        /// </summary>
+        public Car() : base()
         {
         }
 
         /// <summary>
         /// Konstruktør for Car
         /// </summary>
-        /// <param name="licenseplate">Nummerplade</param>
-        /// <param name="date">Dato</param>
-        public Car(string licenseplate)
+        /// <param name="licenseplate">Nummerplade ID</param>
+        public Car(string licenseplate) : base(licenseplate)
         {
-            Licenseplate = licenseplate;
-            Date = new DateTime();
+            Date = new();
         }
 
         /// <summary>
-        /// Property for nummerplade
+        /// Pris for Car i kroner
         /// </summary>
-        public string Licenseplate { get; set; }
-
-        /// <summary>
-        /// Property for dato
-        /// </summary>
-        public DateTime Date { get; set; }
-
-        /// <summary>
-        /// Metode til at returnere pris (double)
-        /// </summary>
-        /// <param name="price">Pris for Car</param>
         /// <returns>240</returns>
-        public double Price(double price = 240)
+        public override double Price()
         {
-            return price;
+            return 240;
         }
 
         /// <summary>
-        /// Metode til at returnere biltype (string)
+        /// Type af køretøj for Car
         /// </summary>
         /// <returns>Car</returns>
-        public string VehicleType(string type = "Car")
+        public override string VehicleType()
         {
-            return type;
+            return "Car";
         }
     }
 }

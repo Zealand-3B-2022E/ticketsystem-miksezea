@@ -1,55 +1,42 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace TicketSystemClassLibrary.model
 {
-    public class MC
+    /// <summary>
+    /// Klasse for MC som nedarver fra Vehicle
+    /// </summary>
+    public class MC : Vehicle
     {
-        public MC() : this("Not assigned")
+        /// <summary>
+        /// Default Konstruktør for MC
+        /// </summary>
+        public MC() : base()
         {
         }
 
         /// <summary>
         /// Konstruktør for MC
         /// </summary>
-        /// <param name="licenseplate">Nummerplade</param>
-        /// <param name="date">Dato</param>
-        public MC(string licenseplate)
+        /// <param name="licenseplate">Nummerplade ID</param>
+        public MC(string licenseplate) : base(licenseplate)
         {
-            Licenseplate = licenseplate;
-            Date = new DateTime();
+            this.Date = new();
         }
 
         /// <summary>
-        /// Property for nummerplade
+        /// Pris for MC i kroner
         /// </summary>
-        public string Licenseplate { get; set; }
-
-        /// <summary>
-        /// Property for dato
-        /// </summary>
-        public DateTime Date { get; set; }
-
-        /// <summary>
-        /// Metode til at returnere pris (double)
-        /// </summary>
-        /// <param name="price">Pris for MC</param>
         /// <returns>125</returns>
-        public double Price(double price = 125)
+        public override double Price()
         {
-            return price;
+            return 125;
         }
 
         /// <summary>
-        /// Metode til at returnere type af køretøj (string)
+        /// Type af køretøj for MC
         /// </summary>
         /// <returns>MC</returns>
-        public string VehicleType(string type = "MC")
+        public override string VehicleType()
         {
-            return type;
+            return "MC";
         }
     }
 }
