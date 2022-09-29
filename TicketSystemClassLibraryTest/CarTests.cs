@@ -14,7 +14,7 @@ namespace TicketSystemTest
         /// <param name="value">Pris</param>
         [DataRow(240)]
         [TestMethod]
-        public void PriceTest(double value)
+        public void Car_Price_AreEqual_240(double value)
         {
             // Arrange
             var car = new Car();
@@ -32,7 +32,7 @@ namespace TicketSystemTest
         /// <param name="value">Biltype</param>
         [DataRow("Car")]
         [TestMethod]
-        public void VehicleTypeTest(string value)
+        public void VehicleType_AreEqual_Car(string value)
         {
             // Arrange
             var car = new Car();
