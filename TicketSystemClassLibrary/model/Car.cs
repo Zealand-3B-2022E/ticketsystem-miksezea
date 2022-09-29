@@ -1,19 +1,24 @@
-﻿namespace TicketSystemClassLibrary
+﻿namespace TicketSystemClassLibrary.model
 {
     /// <summary>
     /// Klasse for Car
     /// </summary>
     public class Car
     {
+        public Car():this("Not assigned")
+        {
+
+        }
+
         /// <summary>
         /// Konstruktør for Car
         /// </summary>
         /// <param name="licenseplate">Nummerplade</param>
         /// <param name="date">Dato</param>
-        public Car(string licenseplate, DateTime date)
+        public Car(string licenseplate)
         {
             Licenseplate = licenseplate;
-            Date = date;
+            Date = new DateTime();
         }
 
         /// <summary>
