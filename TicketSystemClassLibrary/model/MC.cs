@@ -1,20 +1,23 @@
-ï»¿namespace TicketSystemClassLibrary.model
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace TicketSystemClassLibrary.model
 {
-    /// <summary>
-    /// Klasse for Car
-    /// </summary>
-    public class Car
+    public class MC
     {
-        public Car():this("Not assigned")
+        public MC() : this("Not assigned")
         {
         }
 
         /// <summary>
-        /// KonstruktÃ¸r for Car
+        /// Konstruktør for MC
         /// </summary>
         /// <param name="licenseplate">Nummerplade</param>
         /// <param name="date">Dato</param>
-        public Car(string licenseplate)
+        public MC(string licenseplate)
         {
             Licenseplate = licenseplate;
             Date = new DateTime();
@@ -33,18 +36,18 @@
         /// <summary>
         /// Metode til at returnere pris (double)
         /// </summary>
-        /// <param name="price">Pris for Car</param>
-        /// <returns>240</returns>
-        public double Price(double price = 240)
+        /// <param name="price">Pris for MC</param>
+        /// <returns>125</returns>
+        public double Price(double price = 125)
         {
             return price;
         }
 
         /// <summary>
-        /// Metode til at returnere biltype (string)
+        /// Metode til at returnere type af køretøj (string)
         /// </summary>
-        /// <returns>Car</returns>
-        public string VehicleType(string type = "Car")
+        /// <returns>MC</returns>
+        public string VehicleType(string type = "MC")
         {
             return type;
         }
