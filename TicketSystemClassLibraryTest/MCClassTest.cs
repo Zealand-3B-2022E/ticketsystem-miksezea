@@ -1,5 +1,3 @@
-using TicketSystemClassLibrary.model;
-
 namespace TicketSystemTest
 {
     /// <summary>
@@ -17,7 +15,7 @@ namespace TicketSystemTest
         public void Price_AreEqual_125(double value)
         {
             // Arrange
-            var mc = new MC();
+            var mc = new MC("test");
 
             // Act
             double price = mc.Price();
@@ -36,7 +34,7 @@ namespace TicketSystemTest
         public void Price_AreNotEqual_125(double value)
         {
             // Arrange
-            var mc = new MC();
+            var mc = new MC("test");
 
             // Act
             double price = mc.Price();
@@ -54,7 +52,7 @@ namespace TicketSystemTest
         public void VehicleType_AreEqual_MC(string value)
         {
             // Arrange
-            var mc = new MC();
+            var mc = new MC("test");
 
             // Act
             string vehicleType = mc.VehicleType();
@@ -73,7 +71,7 @@ namespace TicketSystemTest
         public void VehicleType_AreNotEqual_MC(string value)
         {
             // Arrange
-            var mc = new MC();
+            var mc = new MC("test");
 
             // Act
             string vehicleType = mc.VehicleType();
@@ -82,5 +80,25 @@ namespace TicketSystemTest
             Assert.AreNotEqual(value, vehicleType);
         }
 
+        /// <summary>
+        /// Tester at værdien for MC's property "licenseplate" ikke feljer ved korrekt værdi
+        /// </summary>
+        /// <param name="value">Licenseplate værdi</param>
+        /// <param name="correctValue">Korrekte licenseplate værdi</param>
+        [DataRow("1234567", "1234567")]
+        [DataRow("1", "1")]
+        [DataRow("1a2bX", "1a2bX")]
+        [TestMethod]
+        public void MC_LicensePlate_AreEqual_Between_1_And_7(string value, string correctValue)
+        {
+            // Arrange
+            var mc = new MC(value);
+
+            // Act
+            string result = mc.Licenseplate;
+
+            // Assert
+            Assert.AreEqual(correctValue, result);
+        }
     }
 }

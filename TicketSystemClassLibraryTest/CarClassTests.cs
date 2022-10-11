@@ -1,5 +1,3 @@
-using TicketSystemClassLibrary.model;
-
 namespace TicketSystemTest
 {
     /// <summary>
@@ -17,7 +15,7 @@ namespace TicketSystemTest
         public void Price_AreEqual_240(double value)
         {
             // Arrange
-            var car = new Car();
+            var car = new Car("test");
 
             // Act
             double price = car.Price();
@@ -36,7 +34,7 @@ namespace TicketSystemTest
         public void Price_AreNotEqual_240(double value)
         {
             // Arrange
-            var car = new Car();
+            var car = new Car("test");
 
             // Act
             double price = car.Price();
@@ -54,7 +52,7 @@ namespace TicketSystemTest
         public void VehicleType_AreEqual_Car(string value)
         {
             // Arrange
-            var car = new Car();
+            var car = new Car("test");
 
             // Act
             string vehicleType = car.VehicleType();
@@ -73,7 +71,7 @@ namespace TicketSystemTest
         public void VehicleType_AreNotEqual_Car(string value)
         {
             // Arrange
-            var car = new Car();
+            var car = new Car("test");
 
             // Act
             string vehicleType = car.VehicleType();
@@ -82,5 +80,43 @@ namespace TicketSystemTest
             Assert.AreNotEqual(value, vehicleType);
         }
 
+        /// <summary>
+        /// Tester at værdien for Car's property "licenseplate" ikke feljer ved korrekt værdi
+        /// </summary>
+        /// <param name="value">Licenseplate værdi</param>
+        /// <param name="correctValue">Korrekte licenseplate værdi</param>
+        [DataRow("1234567", "1234567")]
+        [DataRow("1", "1")]
+        [DataRow("1a2bX", "1a2bX")]
+        [TestMethod]
+        public void Car_LicensePlate_AreEqual_Between_1_And_7(string value, string correctValue)
+        {
+            // Arrange
+            var car = new Car(value);
+
+            // Act
+            string result = car.Licenseplate;
+
+            // Assert
+            Assert.AreEqual(correctValue, result);
+        }
+
+        /*
+        [DataRow("")]
+        [DataRow("12345678")]
+        [TestMethod]
+        []
+        public void Car_LicensePlate_AreNotEqual_Between_1_And_7(string value)
+        {
+            // Arrange
+            Car car = new Car(value);
+
+            // Act
+            string result = car.Licenseplate;
+
+            // Assert
+            Assert.AreEqual(, result);
+        }
+        */
     }
 }

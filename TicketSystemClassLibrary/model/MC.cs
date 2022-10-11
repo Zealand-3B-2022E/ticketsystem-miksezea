@@ -18,7 +18,6 @@ namespace TicketSystemClassLibrary.model
         /// <param name="licenseplate">Nummerplade ID</param>
         public MC(string licenseplate) : base(licenseplate)
         {
-            //this.Date = new();
         }
 
         /// <summary>

@@ -8,17 +8,17 @@ namespace TicketSystemClassLibrary.model
         /// <summary>
         /// Nummerplade på køretøj
         /// </summary>
-        protected string Licenseplate { get; private set; }
+        public string Licenseplate { get; set; }
 
         /// <summary>
         /// Dato for køretøj
         /// </summary>
-        protected DateTime Date { get; private set; }
+        public DateTime Date { get; set; }
 
         /// <summary>
         /// Default konstuktør for Vehicle
         /// </summary>
-        protected Vehicle()
+        protected Vehicle() : this("Not assigned")
         {
         }
 
