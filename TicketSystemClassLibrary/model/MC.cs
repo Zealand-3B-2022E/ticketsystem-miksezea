@@ -18,15 +18,23 @@ namespace TicketSystemClassLibrary.model
         /// <param name="licenseplate">Nummerplade ID</param>
         public MC(string licenseplate) : base(licenseplate)
         {
+
         }
 
         /// <summary>
         /// Pris for MC i kroner
         /// </summary>
-        /// <returns>125</returns>
+        /// <returns>125, medmindre der er rabat</returns>
         public override double Price()
         {
-            return 125;
+            if (Brobizz)
+            {
+                return 125 * 0.95;
+            }
+            else
+            {
+                return 125;
+            }
         }
 
         /// <summary>

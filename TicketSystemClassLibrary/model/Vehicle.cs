@@ -8,12 +8,14 @@ namespace TicketSystemClassLibrary.model
         /// <summary>
         /// Nummerplade på køretøj
         /// </summary>
-        public string Licenseplate { get; set; }
+        public string Licenseplate { get; private set; }
 
         /// <summary>
         /// Dato for køretøj
         /// </summary>
-        public DateTime Date { get; set; }
+        public DateTime Date { get; private set; }
+
+        public bool Brobizz { get; set; }
 
         /// <summary>
         /// Default konstuktør for Vehicle
@@ -35,6 +37,7 @@ namespace TicketSystemClassLibrary.model
             }
             this.Licenseplate = licenseplate;
             this.Date = new();
+            this.Brobizz = false;
         }
 
         /// <summary>

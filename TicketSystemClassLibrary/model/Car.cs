@@ -26,7 +26,14 @@
         /// <returns>240</returns>
         public override double Price()
         {
-            return 240;
+            if (Brobizz)
+            {
+                return 240 * 0.95;
+            }
+            else
+            {
+                return 240;
+            }
         }
 
         /// <summary>

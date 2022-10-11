@@ -26,7 +26,7 @@ namespace TicketSystemTest
         /// <param name="value">Pris</param>
         [DataRow(240)]
         [TestMethod]
-        public void Price_AreEqual_240(double value)
+        public void Car_Price_AreEqual_240(double value)
         {
             // Arrange
 
@@ -44,7 +44,7 @@ namespace TicketSystemTest
         [DataRow(241)]
         [DataRow(0)]
         [TestMethod]
-        public void Price_AreNotEqual_240(double value)
+        public void Car_Price_AreNotEqual_240(double value)
         {
             // Arrange
 
@@ -55,13 +55,26 @@ namespace TicketSystemTest
             Assert.AreNotEqual(value, price);
         }
 
+        [TestMethod]
+        public void Car_Price_With_Discount()
+        {
+            // Arrange
+            car.Brobizz = true;
+
+            // Act
+            double price = car.Price();
+
+            // Assert
+            Assert.AreEqual(240 * 0.95, price);
+        }
+
         /// <summary>
         /// Tester at metoden VehicleType() giver Car
         /// </summary>
         /// <param name="value">Køretøjstype</param>
         [DataRow("Car")]
         [TestMethod]
-        public void VehicleType_AreEqual_Car(string value)
+        public void Car_VehicleType_AreEqual_Car(string value)
         {
             // Arrange
 
@@ -79,7 +92,7 @@ namespace TicketSystemTest
         [DataRow("MC")]
         [DataRow("")]
         [TestMethod]
-        public void VehicleType_AreNotEqual_Car(string value)
+        public void Car_VehicleType_AreNotEqual_Car(string value)
         {
             // Arrange
 
