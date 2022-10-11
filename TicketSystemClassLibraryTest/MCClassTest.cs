@@ -7,6 +7,20 @@ namespace TicketSystemTest
     public class MCClassTests
     {
         /// <summary>
+        /// Testobjekt af MC
+        /// </summary>
+        private MC mc;
+
+        /// <summary>
+        /// Opsætter testobjekt for tests, hvor licenseplate værdi ikke er relevant
+        /// </summary>
+        [TestInitialize]
+        public void BeforeEachTest()
+        {
+            mc = new MC("test");
+        }
+
+        /// <summary>
         /// Tester at metoden Price() giver 125
         /// </summary>
         /// <param name="value">Pris</param>
@@ -15,7 +29,6 @@ namespace TicketSystemTest
         public void Price_AreEqual_125(double value)
         {
             // Arrange
-            var mc = new MC("test");
 
             // Act
             double price = mc.Price();
@@ -34,7 +47,6 @@ namespace TicketSystemTest
         public void Price_AreNotEqual_125(double value)
         {
             // Arrange
-            var mc = new MC("test");
 
             // Act
             double price = mc.Price();
@@ -52,7 +64,6 @@ namespace TicketSystemTest
         public void VehicleType_AreEqual_MC(string value)
         {
             // Arrange
-            var mc = new MC("test");
 
             // Act
             string vehicleType = mc.VehicleType();
@@ -71,7 +82,6 @@ namespace TicketSystemTest
         public void VehicleType_AreNotEqual_MC(string value)
         {
             // Arrange
-            var mc = new MC("test");
 
             // Act
             string vehicleType = mc.VehicleType();
@@ -84,21 +94,41 @@ namespace TicketSystemTest
         /// Tester at værdien for MC's property "licenseplate" ikke feljer ved korrekt værdi
         /// </summary>
         /// <param name="value">Licenseplate værdi</param>
-        /// <param name="correctValue">Korrekte licenseplate værdi</param>
-        [DataRow("1234567", "1234567")]
-        [DataRow("1", "1")]
-        [DataRow("1a2bX", "1a2bX")]
+        [DataRow("1234567")]
+        [DataRow("1")]
+        [DataRow("1a2bX")]
         [TestMethod]
-        public void MC_LicensePlate_AreEqual_Between_1_And_7(string value, string correctValue)
+        public void MC_LicensePlate_AreEqual_Between_1_And_7(string value)
         {
             // Arrange
-            var mc = new MC(value);
+            var mc2 = new MC(value);
 
             // Act
-            string result = mc.Licenseplate;
+            string result = mc2.Licenseplate;
 
             // Assert
-            Assert.AreEqual(correctValue, result);
+            Assert.AreEqual(value, result);
         }
+
+        /// <summary>
+        /// Tester at værdien for MC's property 'licenseplate' fejler ved ukorrekt værdi
+        /// </summary>
+        /// <param name="value"></param>
+        [DataRow("")]
+        [DataRow("12345678")]
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void MC_LicensePlate_AreNotEqual_Between_1_And_7(string value)
+        {
+            // Arrange
+            var mc2 = new MC(value);
+
+            // Act
+            string result = mc2.Licenseplate;
+
+            // Assert
+            Assert.AreNotEqual(value, result);
+        }
+
     }
 }

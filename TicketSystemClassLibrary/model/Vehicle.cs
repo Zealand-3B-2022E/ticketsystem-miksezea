@@ -18,7 +18,7 @@ namespace TicketSystemClassLibrary.model
         /// <summary>
         /// Default konstuktør for Vehicle
         /// </summary>
-        protected Vehicle() : this("Not assigned")
+        protected Vehicle() : this("NoValue")
         {
         }
 
@@ -26,12 +26,12 @@ namespace TicketSystemClassLibrary.model
         /// Konstruktør for Vehicle
         /// </summary>
         /// <param name="licenseplate">Nummerplade ID</param>
-        /// <exception cref="ArgumentException">Nummerplade ID skal være mellem 1-7 tegn</exception>
+        /// <exception cref="ArgumentOutOfRangeException">Nummerplade ID skal være mellem 1-7 tegn</exception>
         protected Vehicle(string licenseplate)
         {
-            if (licenseplate == null || licenseplate.Length == 0 || licenseplate.Length > 7 )
+            if (licenseplate.Length < 1 || licenseplate.Length > 7)
             {
-                throw new ArgumentException($"'{nameof(licenseplate)}' should contain 1 to 7 characters. You typed: {licenseplate}");
+                throw new ArgumentOutOfRangeException($"Value of '{nameof(licenseplate)}' should contain 1 to 7 characters. You typed: {licenseplate}");
             }
             this.Licenseplate = licenseplate;
             this.Date = new();

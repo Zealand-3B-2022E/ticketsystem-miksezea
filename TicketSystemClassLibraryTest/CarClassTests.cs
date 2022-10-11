@@ -7,6 +7,20 @@ namespace TicketSystemTest
     public class CarClassTests
     {
         /// <summary>
+        /// Testobjekt af Car
+        /// </summary>
+        private Car car;
+
+        /// <summary>
+        /// Opsætter testobjekt for alle tests, hvor licenseplate værdi ikke er relevant
+        /// </summary>
+        [TestInitialize]
+        public void BeforeEachTest()
+        {
+            car = new Car("test");
+        }
+
+        /// <summary>
         /// Tester at metoden Price() giver 240
         /// </summary>
         /// <param name="value">Pris</param>
@@ -15,7 +29,6 @@ namespace TicketSystemTest
         public void Price_AreEqual_240(double value)
         {
             // Arrange
-            var car = new Car("test");
 
             // Act
             double price = car.Price();
@@ -34,7 +47,6 @@ namespace TicketSystemTest
         public void Price_AreNotEqual_240(double value)
         {
             // Arrange
-            var car = new Car("test");
 
             // Act
             double price = car.Price();
@@ -52,7 +64,6 @@ namespace TicketSystemTest
         public void VehicleType_AreEqual_Car(string value)
         {
             // Arrange
-            var car = new Car("test");
 
             // Act
             string vehicleType = car.VehicleType();
@@ -71,7 +82,6 @@ namespace TicketSystemTest
         public void VehicleType_AreNotEqual_Car(string value)
         {
             // Arrange
-            var car = new Car("test");
 
             // Act
             string vehicleType = car.VehicleType();
@@ -81,42 +91,44 @@ namespace TicketSystemTest
         }
 
         /// <summary>
-        /// Tester at værdien for Car's property "licenseplate" ikke feljer ved korrekt værdi
+        /// Tester at værdien for Car's property 'licenseplate' ikke feljer ved korrekt værdi
         /// </summary>
         /// <param name="value">Licenseplate værdi</param>
-        /// <param name="correctValue">Korrekte licenseplate værdi</param>
-        [DataRow("1234567", "1234567")]
-        [DataRow("1", "1")]
-        [DataRow("1a2bX", "1a2bX")]
+        [DataRow("1234567")]
+        [DataRow("1")]
+        [DataRow("1a2bX")]
         [TestMethod]
-        public void Car_LicensePlate_AreEqual_Between_1_And_7(string value, string correctValue)
+        public void Car_LicensePlate_AreEqual_Between_1_And_7(string value)
         {
             // Arrange
-            var car = new Car(value);
+            var car2 = new Car(value);
 
             // Act
-            string result = car.Licenseplate;
+            string result = car2.Licenseplate;
 
             // Assert
-            Assert.AreEqual(correctValue, result);
+            Assert.AreEqual(value, result);
         }
 
-        /*
+        /// <summary>
+        /// Tester at værdien for Car's property 'licenseplate' fejler ved ukorrekt værdi
+        /// </summary>
+        /// <param name="value"></param>
         [DataRow("")]
         [DataRow("12345678")]
         [TestMethod]
-        []
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void Car_LicensePlate_AreNotEqual_Between_1_And_7(string value)
         {
             // Arrange
-            Car car = new Car(value);
+            var car2 = new Car(value);
 
             // Act
-            string result = car.Licenseplate;
+            string result = car2.Licenseplate;
 
             // Assert
-            Assert.AreEqual(, result);
+            Assert.AreNotEqual(value, result);
         }
-        */
+        
     }
 }
