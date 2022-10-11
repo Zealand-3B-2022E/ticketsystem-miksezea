@@ -2,8 +2,8 @@ using StoreBaeltTicketLibrary.model;
 
 namespace TicketSystemTest
 {
-    public class WeekendCarClassTest
+    public class StoreBaeltCarClassTest
     {
-        // Mangler test
+        // Mangler tests
     }
 }

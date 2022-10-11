@@ -5,7 +5,7 @@ namespace StoreBaeltTicketLibrary.model
     /// <summary>
     /// Klasse for WeekendCar
     /// </summary>
-    public class WeekendCar : Car
+    public class StoreBaeltCar : Car
     {
         /// <summary>
         /// Pris med weekendrabat og Brobizz
