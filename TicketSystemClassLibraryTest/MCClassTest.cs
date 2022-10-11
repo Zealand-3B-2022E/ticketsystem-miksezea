@@ -57,6 +57,9 @@ namespace TicketSystemTest
             Assert.AreNotEqual(value, price);
         }
 
+        /// <summary>
+        /// Tester at der kommer rabat på pris hvis Brobizz = true
+        /// </summary>
         [TestMethod]
         public void MC_Price_With_Discount()
         {
