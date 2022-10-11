@@ -1,3 +1,5 @@
+using TicketSystemClassLibrary.model;
+
 namespace TicketSystemTest
 {
     /// <summary>

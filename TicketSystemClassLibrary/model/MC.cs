@@ -24,7 +24,7 @@ namespace TicketSystemClassLibrary.model
         /// <summary>
         /// Pris for MC i kroner. Rabat gives ved Brobizz = true
         /// </summary>
-        /// <returns>125 eller 125*0.95</returns>
+        /// <returns>pris</returns>
         public override double Price()
         {
             if (Brobizz)

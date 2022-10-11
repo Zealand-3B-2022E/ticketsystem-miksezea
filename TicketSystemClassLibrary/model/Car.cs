@@ -23,7 +23,7 @@
         /// <summary>
         /// Pris for Car i kroner. Rabat gives ved Brobizz = true
         /// </summary>
-        /// <returns>240 eller 240*0.95</returns>
+        /// <returns>pris</returns>
         public override double Price()
         {
             if (Brobizz)

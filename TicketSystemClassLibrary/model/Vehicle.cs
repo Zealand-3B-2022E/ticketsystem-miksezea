@@ -13,7 +13,7 @@ namespace TicketSystemClassLibrary.model
         /// <summary>
         /// Dato for køretøj
         /// </summary>
-        public DateTime Date { get; private set; }
+        public DateTime Date { get; set; }
 
         public bool Brobizz { get; set; }
 
