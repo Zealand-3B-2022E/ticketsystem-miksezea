@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TicketSystemClassLibrary</name>
+    </assembly>
+    <members>
+        <member name="T:TicketSystemClassLibrary.model.Car">
+            <summary>
+            Klasse for Car
+            </summary>
+        </member>
+        <member name="M:TicketSystemClassLibrary.model.Car.#ctor">
+            <summary>
+            Default Konstruktør for Car
+            </summary>
+        </member>
+        <member name="M:TicketSystemClassLibrary.model.Car.#ctor(System.String)">
+            <summary>
+            Konstruktør for Car
+            </summary>
+            <param name="licenseplate">Nummerplade ID</param>
+        </member>
+        <member name="M:TicketSystemClassLibrary.model.Car.Price">
+            <summary>
+            Pris for Car i kroner. Rabat gives ved Brobizz = true
+            </summary>
+            <returns>pris</returns>
+        </member>
+        <member name="M:TicketSystemClassLibrary.model.Car.VehicleType">
+            <summary>
+            Type af køretøj for Car
+            </summary>
+            <returns>Car</returns>
+        </member>
+        <member name="T:TicketSystemClassLibrary.model.MC">
+            <summary>
+            Klasse for MC som nedarver fra Vehicle
+            </summary>
+        </member>
+        <member name="M:TicketSystemClassLibrary.model.MC.#ctor">
+            <summary>
+            Default Konstruktør for MC
+            </summary>
+        </member>
+        <member name="M:TicketSystemClassLibrary.model.MC.#ctor(System.String)">
+            <summary>
+            Konstruktør for MC
+            </summary>
+            <param name="licenseplate">Nummerplade ID</param>
+        </member>
+        <member name="M:TicketSystemClassLibrary.model.MC.Price">
+            <summary>
+            Pris for MC i kroner. Rabat gives ved Brobizz = true
+            </summary>
+            <returns>pris</returns>
+        </member>
+        <member name="M:TicketSystemClassLibrary.model.MC.VehicleType">
+            <summary>
+            Type af køretøj for MC
+            </summary>
+            <returns>MC</returns>
+        </member>
+        <member name="T:TicketSystemClassLibrary.model.Vehicle">
+            <summary>
+            Abstract klasse som alle køretøjer nedarver fra
+            </summary>
+        </member>
+        <member name="P:TicketSystemClassLibrary.model.Vehicle.Licenseplate">
+            <summary>
+            Nummerplade på køretøj
+            </summary>
+        </member>
+        <member name="P:TicketSystemClassLibrary.model.Vehicle.Date">
+            <summary>
+            Dato for køretøj
+            </summary>
+        </member>
+        <member name="M:TicketSystemClassLibrary.model.Vehicle.#ctor">
+            <summary>
+            Default konstuktør for Vehicle
+            </summary>
+        </member>
+        <member name="M:TicketSystemClassLibrary.model.Vehicle.#ctor(System.String)">
+            <summary>
+            Konstruktør for Vehicle
+            </summary>
+            <param name="licenseplate">Nummerplade ID</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">Nummerplade ID skal være mellem 1-7 tegn</exception>
+        </member>
+        <member name="M:TicketSystemClassLibrary.model.Vehicle.Price">
+            <summary>
+            Abstract metode der angiver pris i kroner for køretøj
+            </summary>
+            <returns>Pris i kroner</returns>
+        </member>
+        <member name="M:TicketSystemClassLibrary.model.Vehicle.VehicleType">
+            <summary>
+            Abstract metode der angiver type af køretøj
+            </summary>
+            <returns>Type af køretøj</returns>
+        </member>
+        <member name="M:TicketSystemClassLibrary.model.Vehicle.ToString">
+            <summary>
+            ToString for Vehicle og klasser der arver fra Vehicle
+            </summary>
+            <returns>Vehicle: \t\t{this.VehicleType()} \nLicense plate ID: \t{this.Licenseplate} \nPrice: \t\t{this.Price()} kr.</returns>
+        </member>
+    </members>
+</doc>
