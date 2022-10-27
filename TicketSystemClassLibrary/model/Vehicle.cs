@@ -5,6 +5,7 @@ namespace TicketSystemClassLibrary.model
     /// </summary>
     public abstract class Vehicle
     {
+        //Hejsa, det her er bare en kommentar til pullrequest :)
         /// <summary>
         /// Nummerplade på køretøj
         /// </summary>
